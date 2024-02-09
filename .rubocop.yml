@@ -1,0 +1,5 @@
+# .rubocop.yml
+require: rubocop-rails
+
+StringLiterals:
+  Enabled: false
