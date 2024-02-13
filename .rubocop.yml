@@ -3,3 +3,5 @@ require: rubocop-rails
 
 StringLiterals:
   Enabled: false
+Style/Documentation:
+  Enabled: false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
@@ -74,12 +76,15 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 
+  # Devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # config/environments/development.rb
   Rails.application.configure do
     config.generators.after_generate do |files|
       parsable_files = files.filter { |file| file.end_with?('.rb') }
       unless parsable_files.empty?
-        system("bundle exec rubocop -A --fail-level=E #{parsable_files.shelljoin}", exception: true)
+        system("bundle exec rubocop -a --fail-level=E #{parsable_files.shelljoin}", exception: true)
       end
     end
   end
