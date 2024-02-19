@@ -9,18 +9,18 @@
                   <div>
                     <%= form.label :email, scoped_view_translation("email"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %> 
                     <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@company.com", required: true, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>    
-                    <%= render "devise/shared/error_messages", resource: resource, field_name: :email %> 
+                    <%= render "shared/field_errors", resource: resource, field_name: :email %> 
                   </div>
                   <div>
                     <%= form.label :password, scoped_view_translation("password"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
                     <%= form.password_field :password, autocomplete: "new-password", placeholder: "••••••••", minLength: @minimum_password_length, required: true, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                    <%= render "devise/shared/error_messages", resource: resource, field_name: :password %> 
+                    <%= render "shared/field_errors", resource: resource, field_name: :password %> 
                   </div>
                   <% if controller_name == 'registrations' %>
                   <div>
                     <%= form.label :password_confirmation, scoped_view_translation("confirm_password"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
                     <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "••••••••", minLength: @minimum_password_length, required: true, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                    <%= render "devise/shared/error_messages", resource: resource, field_name: :password_confirmation %> 
+                    <%= render "shared/field_errors", resource: resource, field_name: :password_confirmation %> 
                   </div>
                   <div class="flex items-start">
                       <div class="flex items-center h-5">

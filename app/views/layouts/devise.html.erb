@@ -15,17 +15,6 @@
   <body class="dark:bg-gray-900">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="overflow-hidden bg-gray-50 dark:bg-gray-900">
-      <%= render partial: "shared/asidebar" %>
-      <div id="main-content" class="relative h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900 sm:ml-64 ">
-        <main>
-          <div>
-            <div class="p-4 dark:border-gray-700 w-full"> 
-              <%= yield %>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>
