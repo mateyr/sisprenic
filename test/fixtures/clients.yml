@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+client_one:
+  first_name: David
+  middle_name: Jose  
+  last_name: Reyes
+  second_last_name: Perez
+  identification: 456-891235-7890X
+  phone_number: 88526974
+
+client_two:
+  first_name: Kevin
+  middle_name: Eduardo
+  last_name: Matey
+  second_last_name: Martinez
+  identification: 256-191035-7890Y
+  phone_number: 59632014

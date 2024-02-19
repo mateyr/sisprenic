@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_10_173641) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_15_222504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
+    t.string "first_name", limit: 25, null: false
+    t.string "middle_name", limit: 25, default: ""
+    t.string "last_name", limit: 25, null: false
+    t.string "second_last_name", limit: 25, default: ""
+    t.string "identification", limit: 16, null: false
+    t.string "phone_number", limit: 8, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identification"], name: "index_clients_on_identification", unique: true
+    t.index ["phone_number"], name: "index_clients_on_phone_number", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

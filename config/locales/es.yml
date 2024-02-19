@@ -1,9 +1,17 @@
 es:
   activerecord:
     models:
-      user: Usuario
+      user: "Usuario"
+      client: "cliente"
     attributes:
       user:
         email: "Correo electrónico"
         password: "Contraseña"
         password_confirmation: "Contraseña" 
+      client:
+        first_name: "Primer nombre"
+        middle_name: "Segundo nombre"
+        last_name: "Primer apellido"
+        second_last_name: "Primer apellido"
+        identification: "Identificación"
+        phone_number: "Teléfono"
