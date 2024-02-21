@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     authenticated :user do
-      root to: "clients#test", as: :authenticated_root
+      root to: "dashboard#index", as: :authenticated_root
     end
     unauthenticated :user do
       root to: "devise/registrations#new", as: :unauthenticated_root
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "/dashboard", to: "dashboard#index"
 
   resources :clients
 end
