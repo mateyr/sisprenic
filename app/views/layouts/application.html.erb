@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body class="dark:bg-gray-900">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -20,7 +17,7 @@
       <div id="main-content" class="relative h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900 sm:ml-64 ">
         <main>
           <div>
-            <div class="p-4 dark:border-gray-700 w-full"> 
+            <div class="p-4 dark:border-gray-700 w-full">
               <%= yield %>
             </div>
           </div>

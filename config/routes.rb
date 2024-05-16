@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
 
   resources :clients
+  resources :loans
 end

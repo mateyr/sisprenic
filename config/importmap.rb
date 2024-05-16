@@ -10,3 +10,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 
 # TODO: Implement own CDN for Flowbite
 pin "flowbite", to: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.turbo.min.js"
+pin "slim-select" # @2.8.1

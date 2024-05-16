@@ -19,6 +19,9 @@ class Client < ApplicationRecord
   validates :phone_number, format: { with: /\A\d{8}\z/,
                                      message: "el formato no es válido" },
                            if: -> { phone_number.present? }
+
+  has_many :loans, dependent: :destroy
+
   def short_name
     "#{first_name} #{last_name}".squish
   end

@@ -1,0 +1,11 @@
+/* Remove Arrows from Number Input */
+/* chrome, Safari, Edge, Opera */
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+.no-spinners[type=number]{
+  -moz-appearance: textfield;
+}
