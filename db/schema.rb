@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_15_222504) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_25_013136) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,29 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_222504) do
     t.index ["phone_number"], name: "index_clients_on_phone_number", unique: true
   end
 
+  create_table "interest_rates", force: :cascade do |t|
+    t.decimal "value", null: false
+    t.bigint "loan_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["loan_id"], name: "index_interest_rates_on_loan_id"
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.decimal "capital", null: false
+    t.integer "term", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.integer "payment_frequency", null: false
+    t.integer "status", default: 1, null: false
+    t.integer "interest_type"
+    t.text "additional_note", default: ""
+    t.bigint "client_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_loans_on_client_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,4 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_222504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "interest_rates", "loans"
+  add_foreign_key "loans", "clients"
 end
